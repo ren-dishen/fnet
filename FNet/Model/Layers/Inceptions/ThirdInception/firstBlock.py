@@ -24,7 +24,7 @@ def inceptionConstructor(input):
     _pool = blockPool(input)
     _1x1 = block1x1(input)
 
-    tensor = factory.concatenate([_3x3, _pool, _1x1])
+    tensor = factory.merge([_3x3, _pool, _1x1])
 
     return tensor
 

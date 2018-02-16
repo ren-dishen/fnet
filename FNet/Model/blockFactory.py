@@ -6,29 +6,29 @@ from keras.layers.core import Lambda, Flatten, Dense
 dataFormat = 'channels_first'
 activationFunc = 'relu'
 
-def convolutionBlock(input, layerName, filters, kernelSize=(1,1), strides=(1,1), padding=None):
-    tensor = Conv2D(filters, kernelSize, strides, padding, dataFormat, name=layerName)(input)
+def convolutionBlock(input, layerName, filters, kernelSize=(1,1), strides=(1,1), padding='valid'):
+    tensor = Conv2D(filters, kernelSize, strides=strides, padding=padding, data_format = dataFormat, name=layerName)(input)
     tensor = BatchNormalization(axis=1, epsilon=0.00001)(tensor)
     tensor = Activation(activationFunc)(tensor)
 
     return tensor
 
 def zeroPadding(input, padding=(1,1)):
-    tensor = ZeroPadding2D(padding, dataFormat)(input)
+    tensor = ZeroPadding2D(padding, data_format = dataFormat)(input)
 
     return tensor
 
 def maxPooling(input, poolSize=(1,1), strides=(1,1), padding='valid'):
-    tensor = MaxPooling2D(poolSize, strides, padding, dataFormat)(input)
+    tensor = MaxPooling2D(poolSize, strides, padding, data_format = dataFormat)(input)
 
     return tensor
 
 def averagePooling(input, poolSize=(1,1), strides=(1,1), padding='valid'):
-    tensor = AveragePooling2D(poolSize, strides, padding, dataFormat)(input)
+    tensor = AveragePooling2D(poolSize, strides, padding, data_format = dataFormat)(input)
 
     return tensor
 
-def concatenate(input, axis=1):
+def merge(input, axis=1):
     tensor = concatenate(input, axis)
 
     return tensor
