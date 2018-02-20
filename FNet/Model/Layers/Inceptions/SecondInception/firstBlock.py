@@ -1,4 +1,4 @@
-from FNet.Model import blockFactory as factory
+import Model.blockFactory as factory
 
 def block1x1(input):
     tensor = factory.convolutionBlock(input, 'IBlock/2/1/1x1/1', 256, (1,1))

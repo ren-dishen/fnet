@@ -1,4 +1,4 @@
-from FNet.Model import blockFactory as factory
+import Model.blockFactory as factory
 
 def block1x1(input):
     tensor = factory.convolutionBlock(input, 'IBlock/1/1/1x1/1', 64, (1,1))
@@ -22,7 +22,7 @@ def block5x5(input):
 def blockPool(input):
     tensor = factory.maxPooling(input, (3,3), (2,2))
     tensor = factory.convolutionBlock(tensor, 'IBlock/1/1/pool/1', 32, (1,1))
-    tensor = factory.zeroPadding(tensor, (3,4),(3,4))
+    tensor = factory.zeroPadding(tensor, ((3,4),(3,4)))
 
     return tensor
 

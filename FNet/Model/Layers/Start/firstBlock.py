@@ -11,7 +11,7 @@ def firstBlock(input):
 def secondBlock(input):
     tensor = factory.convolutionBlock(input, 'IBlock/start/1/2/1', 64, (1,1))
     tensor = factory.zeroPadding(tensor)
-    tensor = factory.maxPooling(tensor, (3,3), (2,2))
+    #tensor = factory.maxPooling(tensor, (3,3), (2,2))
     #todo: do we need here maxpool?
 
     return tensor

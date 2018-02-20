@@ -2,9 +2,16 @@ from keras.layers import Conv2D, ZeroPadding2D, Activation, Input, concatenate
 from keras.layers.normalization import BatchNormalization
 from keras.layers.pooling import MaxPooling2D, AveragePooling2D
 from keras.layers.core import Lambda, Flatten, Dense
+from keras.models import Model
+from keras import backend as Keras
 
 dataFormat = 'channels_first'
 activationFunc = 'relu'
+
+def initialization(shape):
+    initialTensor = Input(shape)
+
+    return initialTensor
 
 def convolutionBlock(input, layerName, filters, kernelSize=(1,1), strides=(1,1), padding='valid'):
     tensor = Conv2D(filters, kernelSize, strides=strides, padding=padding, data_format = dataFormat, name=layerName)(input)
@@ -33,9 +40,12 @@ def merge(input, axis=1):
 
     return tensor
 
-def finishing(input, units, layerName):
-    tensor = averagePooling(input, (3,3))
-    tensor = Flatten(tensor)
-    tensor = Dense(units, layerName)
+def finishing(input, output, units, layerName):
+    tensor = averagePooling(output, (3,3))
+    tensor = Flatten()(tensor)
+    tensor = Dense(units, name=layerName)(tensor)
 
-    return tensor
+    tensor = Lambda(lambda  x: Keras.l2_normalize(x,axis=1))(tensor)
+    model = Model(inputs = input, outputs = tensor, name='FNetModel')
+        
+    return model
