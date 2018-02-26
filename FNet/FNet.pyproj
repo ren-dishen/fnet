@@ -77,11 +77,15 @@
     <Compile Include="Model\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Utilities.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="__init__.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="images\" />
     <Folder Include="Model\" />
     <Folder Include="Model\Layers\" />
     <Folder Include="Model\Layers\Inceptions\" />
@@ -92,6 +96,21 @@
     <Folder Include="Model\weights\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\aubrey_r.png" />
+    <Content Include="images\cara2_r.png" />
+    <Content Include="images\cara3_r.png" />
+    <Content Include="images\cara4_r.png" />
+    <Content Include="images\cara_r.png" />
+    <Content Include="images\eva_r.png" />
+    <Content Include="images\gal_r.png" />
+    <Content Include="images\keanu_r.png" />
+    <Content Include="images\margot_r.png" />
+    <Content Include="images\rachel_r.png" />
+    <Content Include="images\tom_hanks1_r.png" />
+    <Content Include="images\tom_ha_r.png" />
+    <Content Include="images\tom_h_r.png" />
+    <Content Include="images\tom_r.png" />
+    <Content Include="images\tom_test_r.png" />
     <Content Include="Model\weights\bn1_b.csv" />
     <Content Include="Model\weights\bn1_m.csv" />
     <Content Include="Model\weights\bn1_v.csv" />

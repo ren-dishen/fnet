@@ -1,27 +1,27 @@
 import Model.blockFactory as factory
 
 def block1x1(input):
-    tensor = factory.convolutionBlock(input, 'IBlock/2/1/1x1/1', 256, (1,1))
+    tensor = factory.convolutionBlock(input, 'inception_4a_1x1_', '', 256, (1,1))
 
     return tensor
 
 def block3x3(input):
-    tensor = factory.convolutionBlock(input, 'IBlock/2/1/3x3/1', 96, (1,1))
+    tensor = factory.convolutionBlock(input, 'inception_4a_3x3_', '1', 96, (1,1))
     tensor = factory.zeroPadding(tensor)
-    tensor = factory.convolutionBlock(tensor, 'IBlock/2/1/3x3/2', 192, (3,3))
+    tensor = factory.convolutionBlock(tensor, 'inception_4a_3x3_', '2', 192, (3,3))
 
     return tensor
 
 def block5x5(input):
-    tensor = factory.convolutionBlock(input, 'IBlock/2/1/5x5/1', 32, (1,1))
+    tensor = factory.convolutionBlock(input, 'inception_4a_5x5_', '1', 32, (1,1))
     tensor = factory.zeroPadding(tensor, (2,2))
-    tensor = factory.convolutionBlock(tensor, 'IBlock/2/1/5x5/2', 64, (5,5))
+    tensor = factory.convolutionBlock(tensor, 'inception_4a_5x5_', '2', 64, (5,5))
 
     return tensor
 
 def blockPool(input):
     tensor = factory.averagePooling(input, (3,3), (3,3))
-    tensor = factory.convolutionBlock(tensor, 'IBlock/2/1/pool/1', 128, (1,1))
+    tensor = factory.convolutionBlock(tensor, 'inception_4a_pool_', '', 128, (1,1))
     tensor = factory.zeroPadding(tensor, (2,2))
 
     return tensor

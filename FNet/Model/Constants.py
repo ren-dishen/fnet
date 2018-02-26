@@ -1,5 +1,5 @@
 
-WEIGHTS = [
+layerNames = [
   'conv1',
   'bn1',
   'conv2',

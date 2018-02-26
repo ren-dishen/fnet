@@ -13,9 +13,9 @@ def initialization(shape):
 
     return initialTensor
 
-def convolutionBlock(input, layerName, filters, kernelSize=(1,1), strides=(1,1), padding='valid'):
-    tensor = Conv2D(filters, kernelSize, strides=strides, padding=padding, data_format = dataFormat, name=layerName)(input)
-    tensor = BatchNormalization(axis=1, epsilon=0.00001)(tensor)
+def convolutionBlock(input, layerName, blockNumber, filters, kernelSize=(1,1), strides=(1,1), padding='valid'):
+    tensor = Conv2D(filters, kernelSize, strides=strides, padding=padding, data_format = dataFormat, name=layerName + 'conv' + blockNumber)(input)
+    tensor = BatchNormalization(axis=1, epsilon=0.00001, name=layerName + 'bn' + blockNumber)(tensor)
     tensor = Activation(activationFunc)(tensor)
 
     return tensor
