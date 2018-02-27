@@ -1,5 +1,6 @@
 import Model.modelManager as modelManager
 import Utilities
+import tensorflow as tf
 
 model = modelManager.CreateModel((3,96,96))
 
@@ -22,7 +23,6 @@ collection["tom"] = Utilities.GetImageData("images/tom_r.png", model)
 collection["tom_hanks"] = Utilities.GetImageData("images/tom_hanks1_r.png", model)
 collection["tom_hardy"] = Utilities.GetImageData("images/tom_ha_r.png", model)
 
-modelManager.verify("images/tom_test_r.png", "tom", collection, model)
-modelManager.verify("images/tom_test_r.png", "eva", collection, model)
+
 
 print('end')

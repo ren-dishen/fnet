@@ -13,7 +13,6 @@ import Model.Layers.Inceptions.SecondInception.firstBlock as firstBlockOfSecondI
 import Model.Layers.Inceptions.SecondInception.secondBlock as secondBlockOfSecondInception
 import Model.Layers.Inceptions.ThirdInception.firstBlock as firstBlockOfThirdInception
 import Model.Layers.Inceptions.ThirdInception.secondBlock as secondBlockOfThirdInception
-#import inc
 
 def CreateModel(shape):
     initialTensor = factory.initialization(shape)
@@ -87,7 +86,7 @@ def verify(image_path, identity, database, model):
     dist = np.linalg.norm((encoding - database[identity]))
     
     # Step 3: Open the door if dist < 0.7, else don't open (≈ 3 lines)
-    if dist < 0.3:
+    if dist < 0.7:
         print("It's " + str(identity) + ", welcome home!")
         door_open = True
     else:

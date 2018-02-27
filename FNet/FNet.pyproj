@@ -38,16 +38,10 @@
     <Compile Include="Model\Layers\Inceptions\FirstInception\thirdBlock.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Layers\Inceptions\FirstInception\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Model\Layers\Inceptions\SecondInception\firstBlock.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Layers\Inceptions\SecondInception\secondBlock.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Model\Layers\Inceptions\SecondInception\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Layers\Inceptions\ThirdInception\firstBlock.py">
@@ -56,31 +50,13 @@
     <Compile Include="Model\Layers\Inceptions\ThirdInception\secondBlock.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Layers\Inceptions\ThirdInception\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Model\Layers\Inceptions\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Model\Layers\Start\firstBlock.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Model\Layers\Start\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Model\Layers\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\modelManager.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Utilities.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="__init__.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
