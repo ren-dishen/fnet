@@ -104,8 +104,8 @@ def loadWeightsFromFile():
     paths = {}
     weights_dict = {}
 
-    for n in fileNames:
-        paths[n.replace('.csv', '')] = dirPath + '/' + n
+    for fileName in fileNames:
+        paths[fileName.replace('.csv', '')] = dirPath + '/' + fileName
 
     for name in Constants.layerNames:
         if 'conv' in name:
